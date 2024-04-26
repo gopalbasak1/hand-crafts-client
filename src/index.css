@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+body{
+    font-family: "EB Garamond", serif;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  
+  @layer components {
+    .gadgetContainer{
+      @apply max-w-[1920px] px-5 md:px-[50px] lg:px-[80px] xl:px-[120px] 2xl:px-[150px] mx-auto
+    }
+  }
