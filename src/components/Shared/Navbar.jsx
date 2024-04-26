@@ -76,6 +76,30 @@ const Navbar = () => {
           >
             Add Product
           </NavLink>
+
+          <NavLink
+            to="/product"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
+                : "text-[#404040] text-lg font-medium mr-3"
+            }
+          >
+            Product
+          </NavLink>
+
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
+                : "text-[#404040] text-lg font-medium mr-3"
+            }
+          >
+            Cart
+          </NavLink>
+
+
         </>
       )}
     </>

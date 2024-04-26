@@ -7,6 +7,10 @@ import Register from '../Pages/Register/Register';
 import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
 import BrandProducts from '../Pages/Brands/BrandProducts';
 import AddProduct from '../Pages/Product/AddProduct';
+import ProductDetails from '../Pages/Product/ProductDetails';
+import Product from '../Pages/Product/Product';
+import UpdatedProduct from '../Pages/Product/UpdateProduct';
+import Cart from '../Pages/Cart/Cart';
 
 const Routes = createBrowserRouter([
     {
@@ -46,7 +50,42 @@ const Routes = createBrowserRouter([
                   <PrivateRoute>
                     <AddProduct />
                   </PrivateRoute>
-                ),}
+                ),
+            },
+            {
+                path: "/product",
+                element: <Product />,
+                loader: () => fetch("http://localhost:5000/products"),
+              },
+              {
+                path: "/product/:id",
+                element: (
+                  <PrivateRoute>
+                    <ProductDetails />
+                  </PrivateRoute>
+                ),
+                loader: ({ params }) =>
+                  fetch(`http://localhost:5000/product/${params.id}`),
+              },
+              {
+                path: "/update-product/:id",
+                element: (
+                  <PrivateRoute>
+                    <UpdatedProduct />
+                  </PrivateRoute>
+                ),
+                loader: ({ params }) =>
+                  fetch(`http://localhost:5000/product/${params.id}`),
+              },
+
+              {
+                path: "/cart",
+                element: (
+                  <PrivateRoute>
+                    <Cart />
+                  </PrivateRoute>
+                ),
+              },
         ]
     }
 ])
