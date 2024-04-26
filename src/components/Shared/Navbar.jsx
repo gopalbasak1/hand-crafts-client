@@ -65,6 +65,17 @@ const Navbar = () => {
           >
             Update Profile
           </NavLink>
+
+          <NavLink
+            to="/addProduct"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
+                : "text-[#404040] text-lg font-medium mr-3"
+            }
+          >
+            Add Product
+          </NavLink>
         </>
       )}
     </>

@@ -6,6 +6,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
 import BrandProducts from '../Pages/Brands/BrandProducts';
+import AddProduct from '../Pages/Product/AddProduct';
 
 const Routes = createBrowserRouter([
     {
@@ -39,6 +40,13 @@ const Routes = createBrowserRouter([
                     `http://localhost:5000/brands/${params.name}`
                 ),
             },
+            {
+                path: "/addProduct",
+                element: (
+                  <PrivateRoute>
+                    <AddProduct />
+                  </PrivateRoute>
+                ),}
         ]
     }
 ])
