@@ -73,6 +73,7 @@ const UpdatedProduct = () => {
                   type="text"
                   name="category"
                   placeholder="Enter Sub Category Name"
+                  defaultValue={category}
                   className="input input-bordered w-full"
                 />
               </div>
@@ -86,6 +87,7 @@ const UpdatedProduct = () => {
                   type="number"
                   name="time"
                   placeholder="Enter Processing time"
+                  defaultValue={time}
                   className="input input-bordered w-full"
                 />
               </div>
@@ -97,6 +99,7 @@ const UpdatedProduct = () => {
                   type="number"
                   name="price"
                   placeholder="Enter Price"
+                  defaultValue={price}
                   className="input input-bordered w-full"
                 />
               </div>
@@ -109,6 +112,7 @@ const UpdatedProduct = () => {
                 <input
                   type="text"
                   name="rating"
+                  defaultValue={rating}
                   placeholder="Enter Product Rating"
                   className="input input-bordered w-full"
                 />
@@ -120,6 +124,7 @@ const UpdatedProduct = () => {
                 <input
                   type="text"
                   name="photo"
+                  defaultValue={photoUrl}
                   placeholder="Enter Product Photo URL"
                   className="input input-bordered w-full"
                 />
@@ -153,6 +158,7 @@ const UpdatedProduct = () => {
                 <textarea
                   type="text"
                   name="description"
+                  defaultValue={description}
                   placeholder="Enter Short description"
                   className="input input-bordered w-full h-40"
                 />
