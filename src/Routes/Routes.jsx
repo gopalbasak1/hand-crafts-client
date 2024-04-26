@@ -5,6 +5,7 @@ import MyCraft from '../Pages/MyCraft/MyCraft';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
+import BrandProducts from '../Pages/Brands/BrandProducts';
 
 const Routes = createBrowserRouter([
     {
@@ -29,6 +30,15 @@ const Routes = createBrowserRouter([
                 path: '/register',
                 element: <Register/>
             }
+            ,
+            {
+                path: "/brand/:name",
+                element: <BrandProducts />,
+                loader: ({ params }) =>
+                fetch(
+                    `http://localhost:5000/brands/${params.name}`
+                ),
+            },
         ]
     }
 ])
