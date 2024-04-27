@@ -2,15 +2,42 @@ import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
+
 const ProductDetails = () => {
   const [cartdata, setCartdata] = useState([]);
+  const [confirmDelete, setConfirmDelete] = useState(false); // State to handle delete confirmation
 
+  
   const product = useLoaderData();
     
   const { _id, name, photoUrl, description, price, category, time, rating, stock } =
     product;
 
   const desc = description?.split("\n");
+
+  const handleDelete = () => {
+    if (confirmDelete) {
+      fetch(`http://localhost:5000/product/${_id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          toast("Product Deleted Successfully");
+          // Redirect to home page after deletion
+        })
+        .catch((error) => {
+          console.error("Error deleting product:", error);
+          toast.error("Error deleting product");
+        });
+    } else {
+      setConfirmDelete(true);
+    }
+  };
+
+  const cancelDelete = () => {
+    setConfirmDelete(false);
+  };
 
   useEffect(() => {
     fetch("http://localhost:5000/cart")
@@ -97,6 +124,19 @@ const ProductDetails = () => {
                 <span>{stock}</span>
               </div>
             </div>
+
+            <div className="my-4">
+        {/* Conditional rendering for delete confirmation */}
+        {confirmDelete ? (
+          <>
+            <p className="text-xl font-medium pb-2">Are you sure you want to delete this product?</p>
+            <button className="btn bg-blue-500 text-[#fff]" onClick={handleDelete}>Confirm Delete</button>
+            <button className="btn bg-red-500 text-[#ffff]" onClick={cancelDelete}>Cancel</button>
+          </>
+        ) : (
+          <button className="btn btn-primary" onClick={handleDelete}>Delete Product</button>
+        )}
+      </div>
 
             <div className="my-4">
               <div className="clamp-5 break-all space-x-3">

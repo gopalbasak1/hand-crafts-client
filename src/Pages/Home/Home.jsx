@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 // import About from "./About";
 //import ToogleTheme from "../components/ToogleTheme";
 import Brands from "../Brands/Brands";
-import CatBanner from "./CatBanner";
+
+import Product from "../Product/Product";
+
 
 const Home = () => {
   const [brands, setBrands] = useState();
@@ -31,10 +33,11 @@ const Home = () => {
         </div>
         <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4 my-10">
           {brands?.map((brand) => {
-            return <Brands key={brand?._id} brand={brand} />;
+            return <Brands key={brand?.id} brand={brand} />;
           })}
         </div>
-        <CatBanner />
+        
+        <Product/>
       </div>
      
     </div>

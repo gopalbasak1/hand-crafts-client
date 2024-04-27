@@ -7,6 +7,9 @@ const UpdatedProduct = () => {
 
   const { _id, name, photoUrl, description, rating, price, category, time, stock } =
     updateProduct;
+
+    
+
   const handleSubmit = (e) => {
     const form = e.target;
     const name = form.name.value;
@@ -29,7 +32,7 @@ const UpdatedProduct = () => {
       stock
     };
 
-    fetch(`http://localhost:5000/${_id}`, {
+    fetch(`http://localhost:5000/product/${_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateData),

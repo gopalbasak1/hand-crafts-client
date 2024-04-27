@@ -12,6 +12,7 @@ import Product from '../Pages/Product/Product';
 import UpdatedProduct from '../Pages/Product/UpdateProduct';
 import Cart from '../Pages/Cart/Cart';
 
+
 const Routes = createBrowserRouter([
     {
         path: "/",
@@ -19,7 +20,8 @@ const Routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home/>,
+                loader: () => fetch("http://localhost:5000/products"),
             },
             {
                 path: '/myCraft',
@@ -39,10 +41,7 @@ const Routes = createBrowserRouter([
             {
                 path: "/brand/:name",
                 element: <BrandProducts />,
-                loader: ({ params }) =>
-                fetch(
-                    `http://localhost:5000/brands/${params.name}`
-                ),
+               
             },
             {
                 path: "/addProduct",
