@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Brands from "../Brands/Brands";
 
 import Product from "../Product/Product";
+import Banner from "../../components/Banneer/Banner";
 
 
 const Home = () => {
@@ -22,6 +23,8 @@ const Home = () => {
    //const loadBrands = useLoaderData();
   return (
     <div>
+
+      <Banner/>
     
       <div className="lg:max-w-screen-xl  lg:mx-auto lg:px-0 px-5">
         {/* <DetailsSec />
@@ -31,7 +34,7 @@ const Home = () => {
             Brands
           </h1>
         </div>
-        <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4 my-10">
+        <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-4 my-10">
           {brands?.map((brand) => {
             return <Brands key={brand?.id} brand={brand} />;
           })}

@@ -145,35 +145,20 @@ const Navbar = () => {
                   />
                 </div>
                 <div className="absolute -left-24 top-4">
-                  {showTooltip && (
+                {showTooltip && (
                     <div className="tooltip">
-                      {user?.displayName || "User name not found"}
+                      <div>{user?.displayName || "User name not found"}</div>
+                      <button onClick={() => logout()} className="btn btn-sm btn-ghost">
+                        <span className="text-xl">
+                          <CgLogOut />
+                        </span>{" "}
+                        Logout
+                      </button>
                     </div>
                   )}
                 </div>
               </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <button className="btn btn-sm btn-ghost">
-                    {user?.displayName || "user name not found"}
-                  </button>
-                </li>
-
-                <li>
-                  <button
-                    onClick={() => logout()}
-                    className="btn btn-sm btn-ghost"
-                  >
-                    <span className="text-xl">
-                      <CgLogOut />
-                    </span>
-                    Logout
-                  </button>
-                </li>
-              </ul>
+              
             </div>
           ) : (
             <NavLink to="/login">

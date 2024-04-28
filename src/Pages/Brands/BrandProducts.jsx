@@ -15,7 +15,7 @@ const BrandProducts = () => {
   return (
     <div>
       <h1>Brand: {name}</h1>
-      <ul>
+      <ul className="">
         {brandProducts.map((product) => (
           <BrandProductCard key={product.id} product={product} />
         ))}
