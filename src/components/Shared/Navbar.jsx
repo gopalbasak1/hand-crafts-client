@@ -35,37 +35,16 @@ const Navbar = () => {
 
       {user && (
         <>
-         <NavLink
-        to="/myCraft"
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
-            : "text-[#404040] text-lg font-medium mr-3"
-        }
-      >
-        My Craft
-      </NavLink>
-      
-          <NavLink
-            to="/userProfile"
-            className={({ isActive }) =>
-              isActive
-                ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
-                : "text-[#404040] text-lg font-medium mr-3"
-            }
-          >
-            User Profile
-          </NavLink>
 
           <NavLink
-            to="/updateProfile"
+            to="/product"
             className={({ isActive }) =>
               isActive
                 ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
                 : "text-[#404040] text-lg font-medium mr-3"
             }
           >
-            Update Profile
+            All Art & Craft Items
           </NavLink>
 
           <NavLink
@@ -80,14 +59,14 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/product"
+            to="/myCraft"
             className={({ isActive }) =>
               isActive
                 ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
                 : "text-[#404040] text-lg font-medium mr-3"
             }
           >
-            Product
+            My Craft
           </NavLink>
 
           <NavLink

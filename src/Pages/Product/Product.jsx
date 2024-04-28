@@ -19,19 +19,30 @@ const Product = () => {
           Products
         </h1>
       </div>
-      <div className="my-4">
-        <label htmlFor="filter">Filter by Customization:</label>
-        <select id="filter" value={filterValue} onChange={handleFilterChange}>
-          <option value="">Select Customization</option>
-          {/* Add options for filtering */}
-        </select>
-      </div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-10">
-        {loadProduct
-          ? loadProduct?.map((product) => {
-              return <ProductCard product={product} key={product?._id} />;
-            })
-          : "No Products Found"}
+     
+      <div className="overflow-x-auto">
+        <table className="table">
+          <thead>
+            <tr className="text-xl">
+              <th>No</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {loadProduct ? (
+              loadProduct.map((product, index) => {
+                return <ProductCard product={product} key={product?._id} index={index + 1} />;
+              })
+            ) : (
+              <tr>
+                <td colSpan="6">No Products Found</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { FaOpencart } from "react-icons/fa";
 
 const ProductDetails = () => {
   const [cartdata, setCartdata] = useState([]);
-  const [confirmDelete, setConfirmDelete] = useState(false); // State to handle delete confirmation
+
 
   
   const product = useLoaderData();
@@ -16,29 +16,6 @@ const ProductDetails = () => {
 
   const desc = description?.split("\n");
 
-  const handleDelete = () => {
-    if (confirmDelete) {
-      fetch(`http://localhost:5000/product/${_id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          toast("Product Deleted Successfully");
-          // Redirect to home page after deletion
-        })
-        .catch((error) => {
-          console.error("Error deleting product:", error);
-          toast.error("Error deleting product");
-        });
-    } else {
-      setConfirmDelete(true);
-    }
-  };
-
-  const cancelDelete = () => {
-    setConfirmDelete(false);
-  };
 
   useEffect(() => {
     fetch("http://localhost:5000/cart")
@@ -68,7 +45,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto my-10">
+    <div className=" md:max-w-screen-xl mx-auto my-10">
       <div className="product-details container mx-auto my-5 px-2 sm:px-8">
         <div className="grid grid-cols-12 gap-5 rounded-lg  p-2 xs:p-8">
           <div className="col-span-12 max-h-[500px] md:col-span-6">
@@ -84,7 +61,7 @@ const ProductDetails = () => {
                   aria-label="1 / 3"
                 >
                   <div className="swiper-zoom-container">
-                    <img src={photoUrl} alt={name} />
+                    <img className="w-[300px] mx-auto md:h-[462px] md:w-[462px]" src={photoUrl} alt={name} />
                   </div>
                 </div>
               </div>
@@ -127,19 +104,6 @@ const ProductDetails = () => {
             </div>
 
             <div className="my-4">
-        {/* Conditional rendering for delete confirmation */}
-        {confirmDelete ? (
-          <>
-            <p className="text-xl font-medium pb-2">Are you sure you want to delete this product?</p>
-            <button className="btn bg-blue-500 text-[#fff]" onClick={handleDelete}>Confirm Delete</button>
-            <button className="btn bg-red-500 text-[#ffff]" onClick={cancelDelete}>Cancel</button>
-          </>
-        ) : (
-          <button className="btn btn-primary" onClick={handleDelete}>Delete Product</button>
-        )}
-      </div>
-
-            <div className="my-4">
               <div className="clamp-5 break-all space-x-3">
                 {/* <input
                   className="border-2 py-2 px-2 rounded-md w-20"
@@ -164,15 +128,15 @@ const ProductDetails = () => {
           </div>
 
           <div className="col-span-12">
-            <div className="liner-container mb-5 flex border-b-2 border-[rgba(119,119,119,.17)]">
+            <div className="liner-container mb-5 flex border-b-2 border-[rgba(119,119,119,.17)] mx-auto">
               <h1 className="mb-[-2px] inline-block border-b-2 border-primary-color pb-3 text-xl font-bold uppercase">
                 Description
               </h1>
             </div>
-            <div className="see-more relative pb-5">
-              <div className="see-more-container gradient-bottom max-h-[220px] overflow-hidden">
+            <div className="see-more relative pb-5 mx-auto md:w-full">
+              <div className="see-more-container gradient-bottom max-h-[220px] overflow-hidden ">
                 <div className="see-more-content">
-                  <ul>
+                  <ul className="w-[300px] md:w-full">
                     {desc?.map((spec, index) => (
                       <li key={index}>{spec}</li>
                     ))}
