@@ -27,7 +27,8 @@ const Routes = createBrowserRouter([
                 path: '/myCraft',
                 element: <PrivateRoute>
                     <MyCraft/>
-                </PrivateRoute>
+                </PrivateRoute>,
+                
             },
             {
                 path: '/login',

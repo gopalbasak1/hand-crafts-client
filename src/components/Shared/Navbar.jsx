@@ -31,7 +31,11 @@ const Navbar = () => {
         Home
       </NavLink>
 
-      <NavLink
+     
+
+      {user && (
+        <>
+         <NavLink
         to="/myCraft"
         className={({ isActive }) =>
           isActive
@@ -41,9 +45,7 @@ const Navbar = () => {
       >
         My Craft
       </NavLink>
-
-      {user && (
-        <>
+      
           <NavLink
             to="/userProfile"
             className={({ isActive }) =>
