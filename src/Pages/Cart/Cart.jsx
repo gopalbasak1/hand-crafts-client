@@ -29,7 +29,7 @@ const Cart = () => {
       });
   };
   return (
-    <div className="max-w-screen-xxl mx-auto">
+    <div className=" mx-auto">
       <div className="banner-title-section container mx-auto my-5 px-2 sm:px-8">
         <div className="liner-container my-5 flex justify-center border-b-2 border-[rgba(119,119,119,.17)]">
           <h1 className="mb-[-2px] inline-block border-b-2 border-primary-color pb-3 text-2xl font-bold uppercase">
@@ -44,47 +44,41 @@ const Cart = () => {
           <div className="grid grid-cols-12 gap-5 rounded-lg  p-2 xs:p-5">
             <div className="col-span-12 lg:col-span-12">
               <div className=" overflow-x-auto lg:block">
-                <table className="w-full min-w-[800px] text-left">
+                <table className="md:w-full md:min-w-[800px] text-left">
                   <thead>
                     <tr>
                       <th className="p-2"> Picture</th>
                       <th className="p-2">Product Name</th>
-                      <th className="p-2">Brand</th>
-                      <th className="p-2">Categories</th>
-                      <th className="p-2">Subtotal</th>
-                      <th className="p-2"> Action</th>
+                      <th className="md:p-2">Categories</th>
+                      <th className="md:p-2">Price</th>
+                      <th className="md:p-2">Deleted</th>
                     </tr>
                   </thead>
                   <tbody>
                     {cartdata?.map((item) => {
                       return (
                         <tr className="hover:bg-gray-100" key={item._id}>
-                          <td className="p-2">
-                            <div className="h-[100px] w-[100px] min-w-[100px] overflow-hidden rounded-lg border">
+                          <td className="md:p-2">
+                            <div className="h-[80px] w-[30px] md:h-[100px] md:w-[100px] min-w-[100px] overflow-hidden rounded-lg border">
                               <img
-                                className="h-full w-full object-cover"
+                                className="md:h-full md:w-full object-cover"
                                 src={item?.photoUrl}
                                 alt="product"
                               />
                             </div>
                           </td>
                           <td className="p-2">
-                            <a className="clamp-2 break-all font-bold" href="#">
+                            <a className=" break-all text-xs md:text-lg md:font-bold" href="#">
                               {item?.name}
                             </a>
                           </td>
                           <td className="p-2">
-                            <span className="font-bold text-primary-color">
-                              {item?.brand}
+                            <span className="text-xs md:text-lg md:font-bold text-primary-color">
+                              {item?.category}
                             </span>
                           </td>
                           <td className="p-2">
-                            <div className="quantity inline-flex font-bold">
-                              {item?.type}
-                            </div>
-                          </td>
-                          <td className="p-2">
-                            <span className="font-bold text-primary-color">
+                            <span className="text-xs md:text-lg md:font-bold text-primary-color">
                               {item?.price} ৳
                             </span>
                           </td>
@@ -93,7 +87,7 @@ const Cart = () => {
                               onClick={() => handedeleteCartPrdt(item?._id)}
                               className="tippy tippy-remove btn-delete transition-all-300 text-slate-400 hover:text-primary-color"
                             >
-                              <MdDelete className="text-2xl text-red-500" />
+                              <MdDelete className="md:text-2xl text-red-500" />
                             </button>
                             
                           </td>

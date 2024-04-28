@@ -11,6 +11,7 @@ import ProductDetails from '../Pages/Product/ProductDetails';
 import Product from '../Pages/Product/Product';
 import UpdatedProduct from '../Pages/Product/UpdateProduct';
 import Cart from '../Pages/Cart/Cart';
+import About from '../Pages/About/About';
 
 
 const Routes = createBrowserRouter([
@@ -36,10 +37,15 @@ const Routes = createBrowserRouter([
                 element: <Login/>,
             },
             {
+                path: '/about',
+                element: <About/>
+            },
+            {
                 path: '/register',
                 element: <Register/>
             }
             ,
+            
             {
                 path: "/brand/:name",
                 element: <BrandProducts />,

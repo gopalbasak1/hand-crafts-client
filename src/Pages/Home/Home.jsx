@@ -9,6 +9,9 @@ import Brands from "../Brands/Brands";
 
 import Product from "../Product/Product";
 import Banner from "../../components/Banneer/Banner";
+import Facility from "../../components/Facility/Facility";
+import About from "../About/About";
+import Footer from "../../components/Shared/Footer/Footer";
 
 
 const Home = () => {
@@ -22,7 +25,7 @@ const Home = () => {
 
    //const loadBrands = useLoaderData();
   return (
-    <div>
+    <div className="w-[400px] md:w-full">
 
       <Banner/>
     
@@ -40,8 +43,15 @@ const Home = () => {
           })}
         </div>
         
-        <Product/>
+        <Product className="w-[420px] md:w-full mx-auto"/>
+
+          <Facility/>
+
+          <About/>
+
       </div>
+
+          
      
     </div>
   );

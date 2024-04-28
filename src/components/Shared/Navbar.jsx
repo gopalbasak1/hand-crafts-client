@@ -83,6 +83,19 @@ const Navbar = () => {
 
         </>
       )}
+
+    <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive
+            ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
+            : "text-[#404040] text-lg font-medium mr-3"
+        }
+      >
+        About
+      </NavLink>
+
+
     </>
   );
 
@@ -116,14 +129,14 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <img
-              className="w-8 md:w-14 animate__animated md:animate__backInDown rounded-full"
+              className="w-8 md:w-14 rounded-full"
               src={logo}
               alt=""
             />
           </Link>
           <Link
             to="/"
-            className="btn btn-ghost   md:text-3xl animate__animated md:animate__backInDown -ml-2"
+            className="btn btn-ghost   md:text-3xl -ml-2"
           >
             ha<span className="text-[#3e8ab6] -ml-2 -mr-2">n</span>d <span className="-ml-1 text-red-400">Crafts</span>
           </Link>

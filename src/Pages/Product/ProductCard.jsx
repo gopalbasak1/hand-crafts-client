@@ -15,15 +15,15 @@ const ProductCard = ({ product, index }) => {
   };
 
   return (
-    <tr>
-      <td>{index}</td>
+    <tr className="">
+      <td className="hidden md:table-cell">{index}</td>
       <td>{name}</td>
       <td>{category}</td>
-      <td>{price}</td>
+      <td className="hidden md:table-cell">{price}</td>
       <td>
         <NavLink
           to={`/product/${_id}`}
-          className="btn btn-primary"
+          className="btn btn-primary btn-sm"
         >
           View Details
         </NavLink>

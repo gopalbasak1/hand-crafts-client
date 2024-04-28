@@ -81,7 +81,7 @@ const MyCraft = () => {
       <div className="grid md:grid-cols-2 gap-5">
         {filteredItems.map((p) => (
           <div key={p._id}>
-            <div className="card card-side bg-base-100 shadow-xl">
+            <div className="card card-side bg-base-100 shadow-xl w-[400px] mx-auto md:w-full">
               <figure>
                 <img className="h-[300px] w-[300px]" src={p.photoUrl} alt="Craft" />
               </figure>
