@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { FaOpencart } from "react-icons/fa";
 
 
 const ProductDetails = () => {
@@ -9,7 +10,7 @@ const ProductDetails = () => {
 
   
   const product = useLoaderData();
-    
+
   const { _id, name, photoUrl, description, price, category, time, rating, stock } =
     product;
 
@@ -148,9 +149,14 @@ const ProductDetails = () => {
                 />{" "} */}
                 <button
                   onClick={handleAddtoCart}
-                  className="bg-success py-2 px-4 twct-white font-bold rounded-lg"
+                  className="btn bg-success hover:bg-outline py-2 px-4 text-xl hover:text-[#b216c7] font-bold rounded-lg flex items-center gap-2"
                 >
-                  Add to Cart
+                  <span>
+                  Add to Cart 
+                    </span>
+                    <span>
+                      <FaOpencart className="text-xl" />
+                      </span>
                 </button>
                 
               </div>

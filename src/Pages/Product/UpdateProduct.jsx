@@ -69,16 +69,36 @@ const UpdatedProduct = () => {
                 />
               </div>
               <div className="form-control w-full">
-                <label className="label">
+              <label className="label" htmlFor="option">
                   <span className="label-text font-bold"> Subcategory_Name</span>
                 </label>
-                <input
-                  type="text"
-                  name="category"
-                  placeholder="Enter Sub Category Name"
-                  defaultValue={category}
-                  className="input input-bordered w-full"
-                />
+                <select
+                 type="text"
+                 name="category"
+                 id="category"
+                 placeholder="Enter Sub Category Name"
+                 className="input input-bordered w-full"
+                 defaultValue={category}
+              >
+                <option value="Wooden Furniture & Sculptures" selected>
+                Wooden Furniture & Sculptures
+                </option>
+                <option value="Wooden Home Decor" selected>
+                Wooden Home Decor
+                </option>
+                <option value="Wooden Utensils and Kitchenware" selected>
+                Wooden Utensils and Kitchenware
+                </option>
+                <option value="Jute Home Decor" selected>
+                Jute Home Decor
+                </option>
+                <option value="Jute Kitchenware & utensils" selected>
+                Jute Kitchenware & utensils
+                </option>
+                <option value="Jute and wooden jewellery" selected>
+                Jute and wooden jewellery
+                </option>
+              </select>
               </div>
             </div>
             <div className="second flex gap-5 justify-between">
@@ -145,7 +165,7 @@ const UpdatedProduct = () => {
                 name="stock"
                 id="stock"
                 className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
-                defaultValue="inStock" // Use defaultValue instead of selected
+                defaultValue={stock} // Use defaultValue instead of selected
                 >
                 <option value="In Stock">In stock</option> {/* Use value prop */}
                 <option value="Made to Order">Made to Order</option> {/* Use value prop */}

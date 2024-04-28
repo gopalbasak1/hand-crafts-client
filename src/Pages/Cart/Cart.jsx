@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { MdDelete } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 
@@ -92,7 +93,7 @@ const Cart = () => {
                               onClick={() => handedeleteCartPrdt(item?._id)}
                               className="tippy tippy-remove btn-delete transition-all-300 text-slate-400 hover:text-primary-color"
                             >
-                              X
+                              <MdDelete className="text-2xl text-red-500" />
                             </button>
                             
                           </td>

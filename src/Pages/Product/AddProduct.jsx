@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../Context/AuthContextProvider";
 
 
 const AddProduct = () => {
+  const {user} = useContext(AuthContext) || {};
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,6 +16,8 @@ const AddProduct = () => {
     const photoUrl = form.photo.value;
     const time = form.time.value;
     const stock = form.stock.value;
+    const email = user.email;
+    const displayName = user.displayName;
 
     const inputData = {
       name,
@@ -22,7 +27,9 @@ const AddProduct = () => {
       description,
       photoUrl,
       time,
-      stock
+      stock,
+      email,
+      displayName
     };
 
     fetch("http://localhost:5000/products", {
@@ -60,15 +67,36 @@ const AddProduct = () => {
                 />
               </div>
               <div className="form-control w-full">
-                <label className="label">
+                <label className="label" htmlFor="option">
                   <span className="label-text font-bold"> Subcategory_Name</span>
                 </label>
-                <input
-                  type="text"
-                  name="category"
-                  placeholder="Enter Sub Category Name"
-                  className="input input-bordered w-full"
-                />
+                <select
+                 type="text"
+                 name="category"
+                 id="category"
+                 placeholder="Enter Sub Category Name"
+                 className="input input-bordered w-full"
+              >
+                <option value="Wooden Furniture & Sculptures" selected>
+                Wooden Furniture & Sculptures
+                </option>
+                <option value="Wooden Home Decor" selected>
+                Wooden Home Decor
+                </option>
+                <option value="Wooden Utensils and Kitchenware" selected>
+                Wooden Utensils and Kitchenware
+                </option>
+                <option value="Jute Home Decor" selected>
+                Jute Home Decor
+                </option>
+                <option value="Jute Kitchenware & utensils" selected>
+                Jute Kitchenware & utensils
+                </option>
+                <option value="Jute and wooden jewellery" selected>
+                Jute and wooden jewellery
+                </option>
+              </select>
+
               </div>
             </div>
             <div className="second flex gap-5 justify-between">
