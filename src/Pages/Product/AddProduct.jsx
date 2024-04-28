@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContextProvider";
 
 
+
 const AddProduct = () => {
   const {user} = useContext(AuthContext) || {};
   const handleSubmit = (e) => {
@@ -16,6 +17,7 @@ const AddProduct = () => {
     const photoUrl = form.photo.value;
     const time = form.time.value;
     const stock = form.stock.value;
+    const customization = form.customization.value;
     const email = user.email;
     const displayName = user.displayName;
 
@@ -28,6 +30,7 @@ const AddProduct = () => {
       photoUrl,
       time,
       stock,
+      customization,
       email,
       displayName
     };
@@ -165,7 +168,28 @@ const AddProduct = () => {
                 <option value="Made to Order">Made to Order</option> {/* Use value prop */}
                 </select>
               </div>
+
               <div className="form-control w-full">
+              <label
+                className="block mt-4 mb-2 dark:text-white"
+                htmlFor="option"
+              >
+                Customization
+              </label>
+              <select
+                name="customization"
+                id="customization"
+                className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
+                defaultValue="inStock" // Use defaultValue instead of selected
+                >
+                <option value="Yes">Yes</option> {/* Use value prop */}
+                <option value="No">No</option> {/* Use value prop */}
+                </select>
+              </div>
+
+            </div>
+
+            <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text font-bold">
                     {" "}
@@ -179,7 +203,7 @@ const AddProduct = () => {
                   className="input input-bordered w-full h-40"
                 />
               </div>
-            </div>
+
             <div className="submit">
               <input
                 type="submit"

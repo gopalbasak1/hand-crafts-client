@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 const UpdatedProduct = () => {
   const updateProduct = useLoaderData();
 
-  const { _id, name, photoUrl, description, rating, price, category, time, stock } =
+  const { _id, name, photoUrl, description, rating, price, category, time, stock, customization } =
     updateProduct;
 
     
@@ -20,6 +20,7 @@ const UpdatedProduct = () => {
     const photoUrl = form.photo.value;
     const time = form.time.value;
     const stock = form.stock.value;
+    const customization = form.customization.value;
 
     const updateData = {
       name,
@@ -29,7 +30,8 @@ const UpdatedProduct = () => {
       description,
       photoUrl,
       time,
-      stock
+      stock,
+      customization
     };
 
     fetch(`http://localhost:5000/product/${_id}`, {
@@ -171,7 +173,28 @@ const UpdatedProduct = () => {
                 <option value="Made to Order">Made to Order</option> {/* Use value prop */}
                 </select>
               </div>
+
               <div className="form-control w-full">
+              <label
+                className="block mt-4 mb-2 dark:text-white"
+                htmlFor="option"
+              >
+                Customization
+              </label>
+              <select
+                name="customization"
+                id="customization"
+                className="w-full p-2 border rounded-md focus:outline-[#FF497C]"
+                defaultValue={customization} // Use defaultValue instead of selected
+                >
+                <option value="Yes">Yes</option> {/* Use value prop */}
+                <option value="No">No</option> {/* Use value prop */}
+                </select>
+              </div>
+
+            </div>
+
+            <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text font-bold">
                     {" "}
@@ -181,12 +204,11 @@ const UpdatedProduct = () => {
                 <textarea
                   type="text"
                   name="description"
-                  defaultValue={description}
                   placeholder="Enter Short description"
                   className="input input-bordered w-full h-40"
-                />
+                  defaultValue={description}
+                />  
               </div>
-            </div>
             <div className="submit">
               <input
                 type="submit"
