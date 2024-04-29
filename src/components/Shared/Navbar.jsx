@@ -33,9 +33,6 @@ const Navbar = () => {
 
      
 
-      {user && (
-        <>
-
           <NavLink
             to="/product"
             className={({ isActive }) =>
@@ -47,16 +44,6 @@ const Navbar = () => {
             All Art & Craft Items
           </NavLink>
 
-          <NavLink
-            to="/addProduct"
-            className={({ isActive }) =>
-              isActive
-                ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
-                : "text-[#404040] text-lg font-medium mr-3"
-            }
-          >
-            Add Product
-          </NavLink>
 
           <NavLink
             to="/myCraft"
@@ -81,8 +68,19 @@ const Navbar = () => {
           </NavLink>
 
 
-        </>
-      )}
+
+
+
+<NavLink
+            to="/addProduct"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] border-b border-[#23BE0A] font-semibold mr-3 text-lg"
+                : "text-[#404040] text-lg font-medium mr-3"
+            }
+          >
+            Add Product
+          </NavLink>
 
     <NavLink
         to="/about"
@@ -101,7 +99,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-[#5d882852] rounded-2xl mb-5 shadow-xl mx-auto w-[400px] md:w-full">
+      <div className="navbar bg-[#c4b26252] rounded-2xl mb-5 shadow-xl mx-auto w-[400px] md:w-full ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

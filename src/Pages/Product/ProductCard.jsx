@@ -10,9 +10,7 @@ const ProductCard = ({ product, index }) => {
 
   const desc = description?.split("\n");
 
-  const updateProduct = () => {
-    console.log("click");
-  };
+
 
   return (
     <tr className="">

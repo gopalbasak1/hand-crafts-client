@@ -3,7 +3,7 @@ import logo from "../../../assets/logo.jpeg"
 
 const Footer = () => {
   return (
-    <section className="flex flex-col border-t-2 font-poppins my-10">
+    <section className="flex flex-col border-t-2 font-poppins my-10 bg-[#c4b26252]">
       <div className="w-full ">
         <div className="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-0">
           <div className="flex flex-wrap py-10 -mx-3">
@@ -27,7 +27,7 @@ const Footer = () => {
           </Link>
           <span className="-ml-3">
           has been founded on 29 April 2024. From then to
-                now, SR Brand Shop has won the heart of many people and now is a
+                now, hand Crafts has won the heart of many people and now is a
                 country-wide renowned brand.
           </span>
                 </p>
@@ -45,7 +45,7 @@ const Footer = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="w-3 h-3 mr-1 text-white  bi bi-chevron-right"
+                    className="w-3 h-3 mr-1 text-black bi bi-chevron-right"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -66,7 +66,7 @@ const Footer = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="w-3 h-3 mr-1 text-white   bi bi-chevron-right"
+                    className="w-3 h-3 mr-1 text-black bi bi-chevron-right"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -87,7 +87,7 @@ const Footer = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="w-3 h-3 mr-1 text-white   bi bi-chevron-right"
+                    className="w-3 h-3 mr-1 text-black  bi bi-chevron-right"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -113,7 +113,7 @@ const Footer = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="w-3 h-3 mr-1 text-white   bi bi-chevron-right"
+                    className="w-3 h-3 mr-1 text-black   bi bi-chevron-right"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -134,7 +134,7 @@ const Footer = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="w-3 h-3 mr-1 text-white   bi bi-chevron-right"
+                    className="w-3 h-3 mr-1 text-black   bi bi-chevron-right"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -156,7 +156,7 @@ const Footer = () => {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="w-3 h-3 mr-1 text-white   bi bi-chevron-right"
+                    className="w-3 h-3 mr-1 text-black  bi bi-chevron-right"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -201,7 +201,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-4 text-center  text-white  bg-black  ">
+      <div className="py-4 text-center  text-white  bg-[#1d190c52]  ">
         <span>© Copyright 2024 . hand Crafts All Rights Reserved</span>
       </div>
     </section>
