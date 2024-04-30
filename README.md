@@ -5,7 +5,7 @@ hand Crafts is an online platform that specializes in showcasing a wide range of
 
 ## Live Site URL
 
-[hand Crafts](https://6604542180297e25c4b076e2--stellular-kheer-980702.netlify.app/)
+[hand Crafts](https://hand-craft-client.web.app/)
 
 ## Key Features:
 
