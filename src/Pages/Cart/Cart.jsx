@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+
 
 
 const Cart = () => {
@@ -14,6 +15,8 @@ const Cart = () => {
         setCartdata(data);
       });
   }, []);
+
+
 
   const handedeleteCartPrdt = (_id) => {
     fetch(`http://localhost:5000/cart/${_id}`, {

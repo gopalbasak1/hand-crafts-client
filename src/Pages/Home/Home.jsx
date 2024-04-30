@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // import DetailsSec from "./DetailsSec";
 
 
@@ -12,11 +12,14 @@ import Banner from "../../components/Banneer/Banner";
 import Facility from "../../components/Facility/Facility";
 import About from "../About/About";
 import Categories from "../Category/Categories";
+import Spinner from "../../components/Spinner/Spinner";
+import { AuthContext } from "../../Context/AuthContextProvider";
 
 
 
 const Home = () => {
   const [categories, setCategories] = useState();
+  const {loading} = useContext(AuthContext) || {};
 
   useEffect(() => {
     fetch("http://localhost:5000/categories")
@@ -24,6 +27,9 @@ const Home = () => {
       .then((data) => setCategories(data));
   }, []);
 
+  if(loading){
+    return <Spinner/>
+  }
    //const loadBrands = useLoaderData();
   return (
     <div className="w-[400px] md:w-full">

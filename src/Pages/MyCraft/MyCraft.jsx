@@ -2,19 +2,30 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContextProvider";
 import { NavLink } from "react-router-dom";
 import toast from "react-hot-toast";
+import Spinner from "../../components/Spinner/Spinner";
 
 const MyCraft = () => {
-  const { user } = useContext(AuthContext) || {};
+  const { user, loading } = useContext(AuthContext) || {};
   const [items, setItems] = useState([]);
   const [productsToDelete, setProductsToDelete] = useState([]);
   const [filter, setFilter] = useState("All");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myProducts/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
+    // Fetch crafts associated with the authenticated user's email
+    const fetchCrafts = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/myProducts/${user.email}`);
+        const data = await response.json();
         setItems(data);
-      });
+      } catch (error) {
+        console.error("Error fetching crafts:", error);
+        toast.error("Error fetching crafts");
+      }
+    };
+
+    if (user) {
+      fetchCrafts();
+    }
   }, [user]);
 
   const handleDelete = (productId) => {
@@ -59,25 +70,35 @@ const MyCraft = () => {
 
   const filteredItems = filter === "All" ? items : items.filter((item) => item.customization === filter);
 
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <div className="w-[420px] md:w-full mx-auto">
       <h2 className="text-2xl font-bold text-center">My Crafts</h2>
-        <div className="text-center my-10 text-white bg-sky-500 w-[240px] mx-auto py-2 rounded-2xl">
-          <label htmlFor="customizationFilter" className="mr-2 font-semibold text-2xl ">Customization:</label>
-          <select
-            id="customizationFilter"
-            value={filter}
-            onChange={handleFilterChange}
-            className="p-2 border rounded-md focus:outline-[#238d53] bg-sky-500 border-none text-xl font-bold text-white"
-          >
-            <option className="font-bold" value="All">All</option>
-            <option className="font-bold" value="Yes">Yes</option>
-            <option className="font-bold" value="No">No</option>
-          </select>
-        </div>
-      <div className="flex justify-between items-center mb-4">
-        
+      <div className="text-center my-10 text-white bg-sky-500 w-[240px] mx-auto py-2 rounded-2xl">
+        <label htmlFor="customizationFilter" className="mr-2 font-semibold text-2xl ">
+          Customization:
+        </label>
+        <select
+          id="customizationFilter"
+          value={filter}
+          onChange={handleFilterChange}
+          className="p-2 border rounded-md focus:outline-[#238d53] bg-sky-500 border-none text-xl font-bold text-white"
+        >
+          <option className="font-bold" value="All">
+            All
+          </option>
+          <option className="font-bold" value="Yes">
+            Yes
+          </option>
+          <option className="font-bold" value="No">
+            No
+          </option>
+        </select>
       </div>
+      <div className="flex justify-between items-center mb-4"></div>
       <div className="grid md:grid-cols-2 gap-5">
         {filteredItems.map((p) => (
           <div key={p._id}>
@@ -103,11 +124,17 @@ const MyCraft = () => {
                 {confirmDelete(p._id) ? (
                   <>
                     <p className="text-xl font-medium pb-2">Are you sure you want to delete this product?</p>
-                    <button className="btn bg-blue-500 text-[#fff]" onClick={() => handleConfirmDelete(p._id)}>Confirm Delete</button>
-                    <button className="btn bg-red-500 text-[#ffff]" onClick={cancelDelete}>Cancel</button>
+                    <button className="btn bg-blue-500 text-[#fff]" onClick={() => handleConfirmDelete(p._id)}>
+                      Confirm Delete
+                    </button>
+                    <button className="btn bg-red-500 text-[#ffff]" onClick={cancelDelete}>
+                      Cancel
+                    </button>
                   </>
                 ) : (
-                  <button className="btn font-bold uppercase bg-primary text-white" onClick={() => handleDelete(p._id)}>Delete Product</button>
+                  <button className="btn font-bold uppercase bg-primary text-white" onClick={() => handleDelete(p._id)}>
+                    Delete Product
+                  </button>
                 )}
               </div>
             </div>

@@ -1,10 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.jpeg";
 import { IoIosLogIn } from "react-icons/io";
-import { useContext, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
 import { CgLogOut } from "react-icons/cg";
 import { AuthContext } from "../../Context/AuthContextProvider";
+import './navbar.css'
+import { MdOutlineWbSunny } from "react-icons/md";
+import { FaMoon } from "react-icons/fa";
+
 
 const Navbar = () => {
   const { logout, user } = useContext(AuthContext);
@@ -17,6 +20,24 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     setShowTooltip(false);
   };
+
+  const [theme, setTheme] = useState('light');
+
+
+
+     useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+    
 
   const navLinks = (
     <>
@@ -97,6 +118,8 @@ const Navbar = () => {
         About
       </NavLink>
 
+       
+
 
     </>
   );
@@ -145,9 +168,17 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+         
         </div>
 
+        <div>
+            <button onClick={handleTheme} className="btn btn-ghost">
+              {theme === 'dark' ? <MdOutlineWbSunny /> : <FaMoon />}
+            </button>
+          </div>
+
         <div className="navbar-end relative">
+          
           {user?.uid ? (
             <div className="dropdown dropdown-end z-50">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
