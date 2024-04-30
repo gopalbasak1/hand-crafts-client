@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContextProvider";
+import { Helmet } from "react-helmet";
 
 
 
@@ -50,6 +51,9 @@ const AddProduct = () => {
    };
   return (
     <div className="container max-w-6xl mx-auto">
+      <Helmet>
+        <title>hand Crafts | Add Products</title>
+      </Helmet>
       <div className="sect  py-4 w-full mx-auto">
         <div className="content space-y-5">
           <h2 className="text-center text-3xl"> Add Product</h2>

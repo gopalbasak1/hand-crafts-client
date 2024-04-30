@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
@@ -50,6 +51,9 @@ const UpdatedProduct = () => {
   };
   return (
     <div className="container max-w-6xl mx-auto">
+      <Helmet>
+        <title>hand Crafts | {updateProduct.name} </title>
+      </Helmet>
       <div className="sect  py-4 w-full mx-auto">
         <div className="content space-y-5">
           <h2 className="text-center text-3xl"> Update Product</h2>

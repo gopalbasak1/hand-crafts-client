@@ -14,6 +14,7 @@ import About from "../About/About";
 import Categories from "../Category/Categories";
 import Spinner from "../../components/Spinner/Spinner";
 import { AuthContext } from "../../Context/AuthContextProvider";
+import { Helmet } from "react-helmet";
 
 
 
@@ -33,6 +34,10 @@ const Home = () => {
    //const loadBrands = useLoaderData();
   return (
     <div className="w-[400px] md:w-full">
+      
+      <Helmet>
+        <title>hand Crafts | Home </title>
+      </Helmet>
 
       <Banner/>
     

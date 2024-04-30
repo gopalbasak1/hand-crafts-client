@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 import { NavLink } from "react-router-dom";
@@ -33,6 +34,9 @@ const Cart = () => {
   };
   return (
     <div className=" mx-auto">
+      <Helmet>
+        <title>hand Crafts | Cart </title>
+      </Helmet>
       <div className="banner-title-section container mx-auto my-5 px-2 sm:px-8">
         <div className="liner-container my-5 flex justify-center border-b-2 border-[rgba(119,119,119,.17)]">
           <h1 className="mb-[-2px] inline-block border-b-2 border-primary-color pb-3 text-2xl font-bold uppercase">

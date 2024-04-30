@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
+
 
 const Product = () => {
   const loadProduct = useLoaderData();
@@ -12,6 +14,9 @@ const Product = () => {
 
   return (
     <div className="w-[380px] md:w-full  mx-auto my-10 lg:px-0 px-5">
+      <Helmet>
+        <title>hand Crafts | All Art & Craft Items </title>
+      </Helmet>
       <div className="liner-container mt-5 flex justify-center mx-auto w-[350px] md:w-full border-b-2 border-[rgba(119,119,119,.17)]">
         <h1 className="mb-[-2px] inline-block border-b-2 border-primary pb-3 text-2xl font-bold ">
           All Art & Craft Items

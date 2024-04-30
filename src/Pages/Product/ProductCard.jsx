@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContextProvider";
 
+
 const ProductCard = ({ product, index }) => {
   const { user } = useContext(AuthContext);
 
@@ -14,6 +15,7 @@ const ProductCard = ({ product, index }) => {
 
   return (
     <tr className="">
+      
       <td className="hidden md:table-cell">{index}</td>
       <td>{name}</td>
       <td>{category}</td>

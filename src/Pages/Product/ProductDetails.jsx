@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaOpencart } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const ProductDetails = () => {
@@ -46,6 +47,9 @@ const ProductDetails = () => {
 
   return (
     <div className=" md:max-w-screen-xl mx-auto my-10">
+      <Helmet>
+        <title>hand Crafts | {product.name} </title>
+      </Helmet>
       <div className="product-details container mx-auto my-5 px-2 sm:px-8">
         <div className="grid grid-cols-12 gap-5 rounded-lg  p-2 xs:p-8">
           <div className="col-span-12 max-h-[500px] md:col-span-6">

@@ -1,5 +1,6 @@
 import data from "./Animation - 1714409980748.json";
 import Lottie from "lottie-react";
+import { Helmet } from "react-helmet";
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 const About = () => {
@@ -13,6 +14,9 @@ const About = () => {
 
   return (
     <section className="flex items-center  font-poppins w-[400px] md:w-full mx-auto ">
+      <Helmet>
+        <title>hand Crafts | About </title>
+      </Helmet>
       <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6 ">
         <div className="px-4 mb-10 md:text-center md:mb-20">
           <p className="mb-2 text-lg font-semibold text-blue-500 dark:text-gray-700">

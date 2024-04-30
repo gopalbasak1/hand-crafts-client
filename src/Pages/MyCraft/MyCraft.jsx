@@ -3,6 +3,7 @@ import { AuthContext } from "../../Context/AuthContextProvider";
 import { NavLink } from "react-router-dom";
 import toast from "react-hot-toast";
 import Spinner from "../../components/Spinner/Spinner";
+import { Helmet } from "react-helmet";
 
 const MyCraft = () => {
   const { user, loading } = useContext(AuthContext) || {};
@@ -76,6 +77,9 @@ const MyCraft = () => {
 
   return (
     <div className="w-[420px] md:w-full mx-auto">
+      <Helmet>
+        <title>hand Crafts | MyCraft </title>
+      </Helmet>
       <h2 className="text-2xl font-bold text-center">My Crafts</h2>
       <div className="text-center my-10 text-white bg-sky-500 w-[240px] mx-auto py-2 rounded-2xl">
         <label htmlFor="customizationFilter" className="mr-2 font-semibold text-2xl ">
@@ -98,11 +102,11 @@ const MyCraft = () => {
           </option>
         </select>
       </div>
-      <div className="flex justify-between items-center mb-4"></div>
+      <div className=" md:flex justify-between items-center mb-4 w-[410px] md:w-full mx-auto"></div>
       <div className="grid md:grid-cols-2 gap-5">
         {filteredItems.map((p) => (
           <div key={p._id}>
-            <div className="card card-side bg-base-100 shadow-xl w-[400px] mx-auto md:w-full">
+            <div className="card card-side  bg-base-100 shadow-xl w-[380px] mx-auto md:w-full ">
               <figure>
                 <img className="h-[300px] w-[300px]" src={p.photoUrl} alt="Craft" />
               </figure>
