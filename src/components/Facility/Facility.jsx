@@ -1,9 +1,8 @@
-import {
-    FaTruck,
-    FaRegMoneyBillAlt,
-    FaShieldVirus,
-    FaHeadset,
-  } from "react-icons/fa";
+  import online from "./Animation - 1714407979469.json";
+  import secure from "./secure.json";
+  import money from "./money.json";
+  import delivery from "./delivery.json";
+  import Lottie from "lottie-react";
   
   const Facility= () => {
     return (
@@ -16,7 +15,7 @@ import {
             <div className="transition-all-300 flex w-full items-center gap-4 rounded-lg p-5 border-2 xs:pl-[20%] sm:pl-5">
               <div className="rounded-full border-2">
                 <i className="bi bi-truck flex p-3 text-[40px] text-primary-color">
-                  <FaTruck />
+                <Lottie className="h-[100px] w-[100px]" animationData={delivery} />
                 </i>
               </div>
               <div>
@@ -31,7 +30,7 @@ import {
             <div className="transition-all-300 flex w-full items-center gap-4 rounded-lg p-5 border-2 xs:pl-[20%] sm:pl-5">
               <div className="rounded-full border-2">
                 <i className="bi bi-cash-coin flex p-3 text-[40px] text-primary-color">
-                  <FaRegMoneyBillAlt />
+                <Lottie className="h-[100px] w-[100px]" animationData={money} />
                 </i>
               </div>
               <div>
@@ -44,7 +43,7 @@ import {
             <div className="transition-all-300 flex w-full items-center gap-4 rounded-lg p-5 border-2 xs:pl-[20%] sm:pl-5">
               <div className="rounded-full border-2">
                 <i className="bi bi-shield-check flex p-3 text-[40px] text-primary-color">
-                  <FaShieldVirus />
+                <Lottie className="h-[100px] w-[100px]" animationData={secure} />
                 </i>
               </div>
               <div>
@@ -55,9 +54,9 @@ import {
           </div>
           <div className="col-span-12 flex sm:col-span-6 lg:col-span-3">
             <div className="transition-all-300 flex w-full items-center gap-4 rounded-lg p-5 border-2 xs:pl-[20%] sm:pl-5">
-              <div className="rounded-full border-2">
+              <div className="rounded-full border-2 ">
                 <i className="bi bi-headset flex p-3 text-[40px] text-primary-color">
-                  <FaHeadset />
+                <Lottie className="h-[100px] w-[100px]" animationData={online} />
                 </i>
               </div>
               <div>

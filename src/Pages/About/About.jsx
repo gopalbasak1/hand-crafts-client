@@ -1,6 +1,16 @@
-
+import data from "./Animation - 1714409980748.json";
+import Lottie from "lottie-react";
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 const About = () => {
+
+  const [typeEffect] = useTypewriter({
+    words: ['business', 'art craft', 'new things'],
+    loop: {},
+    typeSpeed: 100,
+    deleteSpeed: 40
+  })
+
   return (
     <section className="flex items-center  font-poppins w-[400px] md:w-full mx-auto ">
       <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6 ">
@@ -20,7 +30,8 @@ const About = () => {
         <div className="flex flex-wrap items-center w-[400px] md:w-full mx-auto">
           <div className="w-full px-4 mb-10 md:w-1/2 lg:mb-0 ">
             <h2 className="mb-4 md:text-2xl font-bold text-gray-700 dark:text-gray-700">
-              We provide good business
+              We provide good 
+               <span className="font-extrabold text-red-500 ml-2">{typeEffect}</span>
             </h2>
             <p className="mb-4 text-base leading-7 text-gray-500 dark:text-gray-500 w-[390px] md:w-full mx-auto">
             That is great to hear! Improving the user experience and providing better facilities for art and craft enthusiasts can enhance engagement and satisfaction. If you have any specific features or enhancements you'd like to discuss or implement, feel free to share, and I can assist you further!
@@ -89,11 +100,8 @@ const About = () => {
             </ul>
           </div>
           <div className="relative w-full px-4 mb-10 md:w-1/2 lg:mb-0">
-            <img
-              src="https://i.ibb.co/b5xVj77/about.jpg"
-              alt=""
-              className="relative z-40 object-cover w-full rounded-md md:h-96 h-44"
-            />
+            
+            <Lottie className="relative z-40 object-cover w-full rounded-md md:h-96 h-44" animationData={data} />
             <div className="absolute top-0 right-0 items-center justify-center hidden -mt-16 lg:inline-flex">
               <svg
                 width="290"

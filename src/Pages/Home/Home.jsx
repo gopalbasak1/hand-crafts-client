@@ -31,8 +31,7 @@ const Home = () => {
       <Banner/>
     
       <div className="lg:max-w-screen-xl  lg:mx-auto lg:px-0 px-5">
-        {/* <DetailsSec />
-        <About /> */}
+       
         <div className="liner-container mt-5 flex justify-center border-b-2 border-[rgba(119,119,119,.17)]">
           <h1 className="mb-[-2px] inline-block border-b-2 border-primary pb-3 text-2xl font-bold uppercase">
             Categories

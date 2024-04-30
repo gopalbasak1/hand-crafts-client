@@ -4,13 +4,16 @@ import heroImg3 from "../../assets/Hero/wooden-furniture.jpg";
 import heroImg4 from "../../assets/Hero/Jute and wooden jewellery.jpg";
 import heroImg5 from "../../assets/Hero/Jute Kitchenware & utensils.jpg";
 import heroImg6 from "../../assets/Hero/Wooden Furniture & Sculptures.jpg";
-import { EffectFade, Autoplay } from "swiper/modules";
-
+import { Autoplay, EffectFade,  } from "swiper/modules";
+import Lottie from "lottie-react";
+import data from "./Animation - 1714405665648.json"
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { Link } from "react-router-dom";
+
 
 const Banner = () => {
   return (
@@ -33,12 +36,13 @@ const Banner = () => {
         <div className="md:h-[500px] h-auto">
             <div className="h-full flex flex-col md:flex-row justify-between items-center md:gap-2 gap-10">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto ml-8">
-                <p className="font-semibold text-[#FF497C] mb-3 text-center md:text-left">
-                  <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
+
+                <div className="flex items-center ">
+                  <span>
+                  <Lottie className="h-[100px] w-[100px]" animationData={data} />
                   </span>
-                  Top Brands
-                </p>
+                  <p className="text-[#FF497C] text-xl font-semibold mt-4">Top Crafts</p>
+                </div>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                   Jute Home
@@ -49,12 +53,13 @@ const Banner = () => {
                 </p>
 
                 <div className="flex justify-center md:justify-start">
-                  <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
+                  <Link className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
                     <span className="mr-3">
                       <i className="bx bx-hive"></i>
                     </span>
                     Explore Now
-                  </button>
+                  </Link>
+
                 </div>
               </div>
 
@@ -74,12 +79,12 @@ const Banner = () => {
           <div className="md:h-[550px] h-auto">
             <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto ml-8">
-                <p className="font-semibold text-[#FF497C] mb-3 text-center md:text-left">
-                  <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
+                <div className="flex items-center ">
+                  <span>
+                  <Lottie className="h-[100px] w-[100px]" animationData={data} />
                   </span>
-                  Top Brands
-                </p>
+                  <p className="text-[#FF497C] text-xl font-semibold mt-4">Top Crafts</p>
+                </div>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                   Wooden Utensils & 
@@ -115,12 +120,12 @@ const Banner = () => {
           <div className="md:h-[500px] h-auto">
             <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto ml-8">
-                <p className="font-semibold text-[#FF497C] mb-3 text-center md:text-left">
-                  <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
+              <div className="flex items-center ">
+                  <span>
+                  <Lottie className="h-[100px] w-[100px]" animationData={data} />
                   </span>
-                  Top Brands
-                </p>
+                  <p className="text-[#FF497C] text-xl font-semibold mt-4">Top Crafts</p>
+                </div>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                 Wooden Home <br /> Decor
@@ -157,12 +162,12 @@ const Banner = () => {
           <div className="md:h-[500px] h-auto">
             <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto ml-8">
-                <p className="font-semibold text-[#FF497C] mb-3 text-center md:text-left">
-                  <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
+              <div className="flex items-center ">
+                  <span>
+                  <Lottie className="h-[100px] w-[100px]" animationData={data} />
                   </span>
-                  Top Brands
-                </p>
+                  <p className="text-[#FF497C] text-xl font-semibold mt-4">Top Crafts</p>
+                </div>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                 Jute and wooden
@@ -199,12 +204,12 @@ const Banner = () => {
           <div className="md:h-[500px] h-auto">
             <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto ml-8">
-                <p className="font-semibold text-[#FF497C] mb-3 text-center md:text-left ">
-                  <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
+              <div className="flex items-center ">
+                  <span>
+                  <Lottie className="h-[100px] w-[100px]" animationData={data} />
                   </span>
-                  Top Brands
-                </p>
+                  <p className="text-[#FF497C] text-xl font-semibold mt-4">Top Crafts</p>
+                </div>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                 Jute Kitchenware & 
@@ -241,12 +246,12 @@ const Banner = () => {
           <div className="md:h-[500px] h-auto">
             <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto ml-10">
-                <p className="font-semibold text-[#FF497C] mb-3 text-center md:text-left">
-                  <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
+              <div className="flex items-center ">
+                  <span>
+                  <Lottie className="h-[100px] w-[100px]" animationData={data} />
                   </span>
-                  Top Brands
-                </p>
+                  <p className="text-[#FF497C] text-xl font-semibold mt-4">Top Crafts</p>
+                </div>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                 Wooden Furniture &

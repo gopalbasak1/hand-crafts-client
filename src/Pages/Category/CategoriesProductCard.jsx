@@ -2,7 +2,16 @@ import { NavLink } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 const CategoriesProductCard = ({ product }) => {
-  const { _id, name, photoUrl, rating, price, category } = product;
+  const { _id, name, photoUrl, rating, price, category, description, time } = product;
+
+  // Example description
+
+// Function to slice the description to show only the first 15 words
+const slicedDescription = (description) => {
+  const words = description.split(' '); // Split the description into an array of words
+  const slicedWords = words.slice(0, 10); // Extract the first 15 words
+  return slicedWords.join(' '); // Join the sliced words back into a string
+};
 
   return (
     <div className="lg:col-span-6 col-span-12">
@@ -32,6 +41,11 @@ const CategoriesProductCard = ({ product }) => {
               {name}
             </a>
           </div>
+          <div className="my-2">
+            <span className="rounded-md bg-green-300 py-1 px-2 text-xs font-bold uppercase text-white">
+              {category}
+            </span>
+          </div>
           <div className="my-1">
             <span className="price-now text-lg font-bold">
               Price: {price} ৳
@@ -41,12 +55,15 @@ const CategoriesProductCard = ({ product }) => {
             <div className="flex text-red-600 text-lg">
               Rating: {rating}
             </div>
+            <div className="flex text-red-600 text-lg">
+              Processing Time: {time} day
+            </div>
           </div>
-          <div className="my-2">
-            <span className="rounded-md bg-green-300 py-1 px-2 text-xs font-bold uppercase text-white">
-              {category}
-            </span>
+
+          <div>
+          <p ><span className="font-medium">Description:</span> {slicedDescription(description)}</p>
           </div>
+          
 
 
           <div className="mt-2">
