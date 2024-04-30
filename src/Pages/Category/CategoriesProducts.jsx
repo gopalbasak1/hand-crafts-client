@@ -9,7 +9,7 @@ const CategoriesProducts = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/categories/${name}`)
+    fetch(`https://hand-craft-server.vercel.app/categories/${name}`)
       .then((response) => response.json())
       .then((data) => setBrandProducts(data));
   }, [name]);

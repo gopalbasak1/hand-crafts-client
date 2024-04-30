@@ -36,7 +36,7 @@ const AddProduct = () => {
       displayName
     };
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://hand-craft-server.vercel.app/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(inputData),

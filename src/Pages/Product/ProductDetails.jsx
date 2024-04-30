@@ -19,7 +19,7 @@ const ProductDetails = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/cart")
+    fetch("https://hand-craft-server.vercel.app/cart")
       .then((res) => res.json())
       .then((data) => {
         setCartdata(data);
@@ -32,7 +32,7 @@ const ProductDetails = () => {
     if (matchProduct) {
       toast("This Product already exists.");
     } else {
-      fetch("http://localhost:5000/cart", {
+      fetch("https://hand-craft-server.vercel.app/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(product),

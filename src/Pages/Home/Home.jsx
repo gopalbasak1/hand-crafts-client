@@ -23,7 +23,7 @@ const Home = () => {
   const {loading} = useContext(AuthContext) || {};
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://hand-craft-server.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);

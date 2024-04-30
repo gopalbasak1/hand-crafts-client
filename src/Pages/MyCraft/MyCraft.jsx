@@ -15,7 +15,7 @@ const MyCraft = () => {
     // Fetch crafts associated with the authenticated user's email
     const fetchCrafts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/myProducts/${user.email}`);
+        const response = await fetch(`https://hand-craft-server.vercel.app/myProducts/${user.email}`);
         const data = await response.json();
         setItems(data);
       } catch (error) {
@@ -45,7 +45,7 @@ const MyCraft = () => {
   };
 
   const handleConfirmDelete = (productId) => {
-    fetch(`http://localhost:5000/myProducts/${productId}`, {
+    fetch(`https://hand-craft-server.vercel.app/myProducts/${productId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

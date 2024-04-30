@@ -25,7 +25,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                loader: () => fetch("http://localhost:5000/products"),
+                loader: () => fetch("https://hand-craft-server.vercel.app/products"),
             },
             {
                 path: '/myCraft',
@@ -65,7 +65,7 @@ const Routes = createBrowserRouter([
             {
                 path: "/product",
                 element: <Product />,
-                loader: () => fetch("http://localhost:5000/products"),
+                loader: () => fetch("https://hand-craft-server.vercel.app/products"),
               },
               {
                 path: "/product/:id",
@@ -75,7 +75,7 @@ const Routes = createBrowserRouter([
                   </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                  fetch(`http://localhost:5000/product/${params.id}`),
+                  fetch(`https://hand-craft-server.vercel.app/product/${params.id}`),
               },
               {
                 path: "/update-product/:id",
@@ -85,7 +85,7 @@ const Routes = createBrowserRouter([
                   </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                  fetch(`http://localhost:5000/product/${params.id}`),
+                  fetch(`https://hand-craft-server.vercel.app/product/${params.id}`),
               },
 
               {

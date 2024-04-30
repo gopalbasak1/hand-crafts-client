@@ -35,7 +35,7 @@ const UpdatedProduct = () => {
       customization
     };
 
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://hand-craft-server.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateData),

@@ -10,7 +10,7 @@ const Cart = () => {
   const [cartdata, setCartdata] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cart`)
+    fetch(`https://hand-craft-server.vercel.app/cart`)
       .then((res) => res.json())
       .then((data) => {
         setCartdata(data);
@@ -20,7 +20,7 @@ const Cart = () => {
 
 
   const handedeleteCartPrdt = (_id) => {
-    fetch(`http://localhost:5000/cart/${_id}`, {
+    fetch(`https://hand-craft-server.vercel.app/cart/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
