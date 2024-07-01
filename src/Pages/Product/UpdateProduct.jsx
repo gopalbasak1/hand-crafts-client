@@ -10,7 +10,6 @@ const UpdatedProduct = () => {
     updateProduct;
 
     
-
   const handleSubmit = (e) => {
     const form = e.target;
     const name = form.name.value;

@@ -7,6 +7,8 @@ import { AuthContext } from "../../Context/AuthContextProvider";
 import './navbar.css'
 import { MdOutlineWbSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
+import { doc } from "firebase/firestore";
+import ThemeControler from "./ThemeControler";
 
 
 const Navbar = () => {
@@ -21,21 +23,24 @@ const Navbar = () => {
     setShowTooltip(false);
   };
 
-  const [theme, setTheme] = useState('light');
+  // const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
+
+  // console.log(theme)
 
 
+  //    useEffect(() => {
+  //   localStorage.setItem('theme', theme);
+  //   const localTheme = localStorage.getItem('theme');
+  //   document.querySelector('html').setAttribute('data-theme', localTheme)
+  // }, [theme]);
 
-     useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const handleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  // const handleTheme = (e) => {
+  //   if(e.target.checked){
+  //     setTheme('dark');
+  //   } else{
+  //     setTheme('light')
+  //   }
+  // };
 
     
 
@@ -172,9 +177,12 @@ const Navbar = () => {
         </div>
 
         <div>
-            <button onClick={handleTheme} className="btn btn-ghost">
+            {/* <button onChange={handleTheme}
+            checked={theme === 'light' ? false:true}
+            className="btn btn-ghost">
               {theme === 'dark' ? <MdOutlineWbSunny /> : <FaMoon />}
-            </button>
+            </button> */}
+            <ThemeControler/>
           </div>
 
         <div className="navbar-end relative">

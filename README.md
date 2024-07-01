@@ -44,7 +44,7 @@ hand Crafts is an online platform that specializes in showcasing a wide range of
 
 - React.js for frontend development
 - Node.js and Express.js for backend development
-- RMongoDB for database management
+- MongoDB for database management
 - Firebase for authentication
 - react-router-dom
 - tailwindcss
@@ -55,6 +55,14 @@ hand Crafts is an online platform that specializes in showcasing a wide range of
 - React-simple-typewriter
 - react-hook-form
 - react-hot-toast
+
+## Installation Steps:
+
+- Clone the repository.
+- Run npm install to install dependencies.
+- Configure Firebase and MongoDB credentials in .env file.
+- Run npm start to start the development server.
+- Access the website at http://localhost:5000.
 
 ## Enjoy your CraftyArts Experience!
 We hope you enjoy exploring our collection of Jute & Wooden Crafts. Happy crafting!
